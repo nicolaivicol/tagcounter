@@ -1,6 +1,7 @@
 ### main program
 
 import argparse
+import pkg_resources
 from tagcounter.udf import init_logging, read_sites_synonyms_from_yaml, run_console, run_ui
 from tagcounter.db import init_db_session
 
@@ -17,9 +18,13 @@ def run():
     # print(args)
 
     ## app 'hard-coded' params
-    file_dict_synoms = 'data/dictionary_websites.yml'
-    file_logs = 'data/logs.log'
-    file_db_sqlite = 'data/tagcounts_sqlite.db'
+    file_dict_synoms = pkg_resources.resource_filename(__name__, 'data/dictionary_websites.yml')
+    file_logs = pkg_resources.resource_filename(__name__, 'data/logs.log')
+    file_db_sqlite = pkg_resources.resource_filename(__name__, 'data/tagcounts_sqlite.db')
+
+    #file_dict_synoms = 'data/dictionary_websites.yml'
+    #file_logs = 'data/logs.log'
+    #file_db_sqlite = 'data/tagcounts_sqlite.db'
 
     init_logging(file_logs)
     db_session = init_db_session(file_db_sqlite)

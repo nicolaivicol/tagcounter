@@ -15,7 +15,8 @@ setup(name='tagcounter',
                         'pyyaml',
                         'requests',
                         ],
-      package_data={'tagcounter': ['data/.*_sqlite.db', 'data/.*.yml', 'data/.*.log']},
+      package_data={'tagcounter/data': ['*.db', '*.yml', '*.log']},
       include_package_data=True,
       entry_points={'console_scripts': ['tagcounter = tagcounter.main:run']},
-      zip_safe=False)
+      zip_safe=False,
+      )

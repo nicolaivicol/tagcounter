@@ -18,7 +18,7 @@ def run():
 
     ## app 'hard-coded' params
     file_dict_synoms = 'data/dictionary_websites.yml'
-    file_logs = 'logs.log'
+    file_logs = 'data/logs.log'
     file_db_sqlite = 'data/tagcounts_sqlite.db'
 
     init_logging(file_logs)

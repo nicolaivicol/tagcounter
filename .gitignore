@@ -1,6 +1,5 @@
 # related to app (logs, data)
 logs.log
-tagcounts_sqlite.db
 
 # IDEA
 .idea/
